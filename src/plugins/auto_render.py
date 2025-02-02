@@ -6,7 +6,7 @@ from nonebot.adapters.onebot.v11 import MessageEvent, MessageSegment
 from pydantic import BaseModel, Field
 from yarl import URL
 
-pep = on_message(block=False, priority=10)
+auto_render = on_message(block=False, priority=10)
 reg = r"http[s]?://(?:[a-zA-Z0-9$-_@.&+!*',]|[()%#]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
 
 
@@ -17,8 +17,8 @@ class Config(BaseModel):
 config = get_plugin_config(Config)
 
 
-@pep.handle()
-async def pep_handler(matcher: Matcher, event: MessageEvent):
+@auto_render.handle()
+async def auto_render_handler(matcher: Matcher, event: MessageEvent):
     message = event.get_message()
     txt = message.extract_plain_text()
     if len(urls := findall(reg, txt)) == 0:
