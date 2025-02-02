@@ -478,7 +478,7 @@ dependencies = [
     { name = "nonebot-plugin-manager" },
     { name = "nonebot-plugin-mmm" },
     { name = "nonebot-plugin-pong" },
-    { name = "nonebot2", extra = ["fastapi", "httpx"] },
+    { name = "nonebot2", extra = ["fastapi", "httpx", "websockets"] },
 ]
 
 [package.metadata]
@@ -490,7 +490,7 @@ requires-dist = [
     { name = "nonebot-plugin-manager", git = "https://github.com/nonepkg/plugin-manager" },
     { name = "nonebot-plugin-mmm", specifier = ">=0.2.3" },
     { name = "nonebot-plugin-pong", specifier = ">=0.1.2" },
-    { name = "nonebot2", extras = ["fastapi", "httpx"], specifier = ">=2.4.1" },
+    { name = "nonebot2", extras = ["fastapi", "httpx", "websockets"], specifier = ">=2.4.1" },
 ]
 
 [[package]]
@@ -660,6 +660,9 @@ fastapi = [
 ]
 httpx = [
     { name = "httpx", extra = ["http2"] },
+]
+websockets = [
+    { name = "websockets" },
 ]
 
 [[package]]
